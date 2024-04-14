@@ -50,7 +50,7 @@
               @else
                 <a href="/{{$suggested_user->username}}/follow" class="text-blue-500 font-bold">{{__('Follow')}}</a>
               @endif --}}
-              <livewire:follow  :userId="$suggested_user->id" btnStyle="text-blue-500"/>
+              <livewire:follow-button  :userId="$suggested_user->id" btnStyle="text-blue-500"/>
 
             </li>
           @endforeach

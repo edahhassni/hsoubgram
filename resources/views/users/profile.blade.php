@@ -18,9 +18,8 @@
                         class="w-50 px-5  text-sm border font-bold py-1 rounded-md border-neutral-300 text-center">
                         {{ __('Edit Profile') }}
                     </a>
-                @endif
-                @if($user->id != auth()->id())
-                <livewire:follow  :userId="$user->id" btnStyle="bg-blue-500 rounded text-white"/>
+                @else
+                <livewire:follow-button  :userId="$user->id" btnStyle="bg-blue-500 rounded text-white"/>
 
                 @endif
             @endauth
@@ -41,29 +40,22 @@
       <div
           class="col-span-4 my-5 py-3 border-y border-y-neutral-200 order-4 md:order-3 md:border-none md:px-4 md:col-start-2">
           <ul class="text-md flex flex-row justify-around md:justify-start md:space-x-10 md-text-xl">
-              <li class="flex flex-col md:flex-row text-center">
-                  <div class="md:mr-1 font-bold md:font-normal">
-                      {{ $user->posts->count() }}
-                      <span
-                          class="text-neutral-500 md:text-black">{{ $user->posts->count() > 1 ? 'posts' : 'post' }}</span>
-                  </div>
-              </li>
+            <li class="flex flex-col md:flex-row text-center">
+                <div class="md:mr-1 font-bold md:font-normal">
+                    {{ $user->posts->count() }}
+                    <span
+                        class="text-neutral-500 md:text-black">{{ $user->posts->count() > 1 ? 'posts' : 'post' }}</span>
+                </div>
+            </li>
 
-              <li class="flex flex-col md:flex-row text-center">
-                  <div class="md:mr-1 font-bold md:font-normal">
-                      {{ $user->followers->count() }}
-                      <span
-                          class="text-neutral-500 md:text-black">{{ $user->followers->count() > 1 ? __('followers') : __('follower') }}</span>
-                  </div>
-              </li>
+            <li class="flex flex-col md:flex-row text-center">
+                <div class="md:mr-1 font-bold md:font-normal">
+                    {{ $user->followers->count() }}
+                    <button onclick="Livewire.emit('openModal',  'follow-modal') class="text-neutral-500 md:text-black">{{$user->followers->count() > 1 ? __('followers') : __('follower') }}</button>
+                </div>
+            </li>
 
-              <li class="flex flex-col md:flex-row text-center">
-                  <div class="md:mr-1 font-bold md:font-normal">
-                      {{ $user->following_count() }}
-
-                      <span class="text-neutral-500 md:text-black">{{ __('following') }}</span>
-                  </div>
-              </li>
+              <livewire:following :userId="$user->id"/>
 
           </ul>
       </div>

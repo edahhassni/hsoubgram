@@ -78,7 +78,7 @@ class User extends Authenticatable
     
     public function followers()
     {
-        return $this->belongsToMany(User::class,'follows', 'following_user_id','user_id')->withTimestamps()->withPivot('confirmed');
+        return $this->belongsToMany(User::class,'follows', 'following_user_id','user_id')->withTimestamps()->withPivot('confirmed')->wherePivot('confirmed', true);
     }
 
     public function toggle_follow(User $user)
@@ -115,10 +115,6 @@ class User extends Authenticatable
     }
 
 
-    public function following_count()
-    {
-        return $this->following()->wherePivot('confirmed', true)->get()->count();
-    }
 
     public function is_following(User $user)
     {
