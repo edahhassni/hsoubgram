@@ -13,7 +13,10 @@
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+<<<<<<< HEAD
         @livewireStyles
+=======
+>>>>>>> 5365170645c1f86bb5fb86046685c546c0b97044
         {{-- <link rel="stylesheet" href="{{asset('public/build/assets/all.css')}}">
         <link rel="stylesheet" href="{{asset('public/build/webfonts')}}"> --}}
     </head>
@@ -35,8 +38,11 @@
                 {{ $slot }}
             </main>
         </div>
+<<<<<<< HEAD
         @livewireScripts
         @livewire('livewire-ui-modal')
         <script src="https://unpkg.com/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
+=======
+>>>>>>> 5365170645c1f86bb5fb86046685c546c0b97044
     </body>
 </html>

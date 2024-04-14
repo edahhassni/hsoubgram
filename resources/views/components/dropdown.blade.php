@@ -23,7 +23,11 @@ switch ($width) {
 
 <div class="relative" x-data="{ open: false }" @click.outside="open = false" @close.stop="open = false">
     <div @click="open = ! open">
+<<<<<<< HEAD
         {{ $trigger ?? '' }}
+=======
+        {{ $trigger }}
+>>>>>>> 5365170645c1f86bb5fb86046685c546c0b97044
     </div>
 
     <div x-show="open"

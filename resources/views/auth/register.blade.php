@@ -14,12 +14,15 @@
             <x-text-input id="username" class="block mt-1 w-full" type="text" name="username" :value="old('username')"  autofocus autocomplete="username" />
             <x-input-error :messages="$errors->get('username')" class="mt-2" />
         </div>
+<<<<<<< HEAD
         <!-- Bio -->
         <div class="mt-4">
             <x-input-label for="bio" :value="__('Bio')" />
             <x-text-input id="bio" class="block mt-1 w-full" type="text" name="bio" :value="old('bio')"  autofocus autocomplete="bio" />
             <x-input-error :messages="$errors->get('bio')" class="mt-2" />
         </div>
+=======
+>>>>>>> 5365170645c1f86bb5fb86046685c546c0b97044
 
         <!-- Email Address -->
         <div class="mt-4">

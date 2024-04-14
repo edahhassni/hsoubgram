@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Http\Requests\UpdateUserProfileRequest;
 use App\Models\Post;
 use App\Models\User;
@@ -62,4 +63,5 @@ class UserController extends Controller
   //     auth()->user()->unfollow($user);
   //     return back();
   // }
+
 }

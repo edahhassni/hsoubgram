@@ -1,7 +1,10 @@
 <?php
 
 use App\Http\Controllers\CommentController;
+<<<<<<< HEAD
 use App\Http\Controllers\LikeController;
+=======
+>>>>>>> 5365170645c1f86bb5fb86046685c546c0b97044
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
@@ -17,10 +20,15 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+<<<<<<< HEAD
 
 require __DIR__.'/auth.php';
 
 
+=======
+Route::get('/explore', [PostController::class, 'explore'] )->name('explore');
+Route::get('/{user:username}', [UserController::class, 'index'] )->name('user_profile');
+>>>>>>> 5365170645c1f86bb5fb86046685c546c0b97044
 
 
 Route::controller(PostController::class)->middleware('auth')->group(function(){
@@ -32,6 +40,7 @@ Route::controller(PostController::class)->middleware('auth')->group(function(){
   Route::patch('/p/{post:slug}/update',  'update')->name('update_post');
   Route::delete('/p/{post:slug}/delete',  'destroy')->name('delete_post');
 });
+<<<<<<< HEAD
 Route::get('/explore', [PostController::class, 'explore'] )->name('explore');
 
 Route::get('/{user:username}', [UserController::class, 'index'] )->name('user_profile');
@@ -42,6 +51,10 @@ Route::patch('/{user:username}/update', [UserController::class, 'update'] )->mid
 
 Route::post('/p/{post:slug}/comment', [CommentController::class, 'store'])->name('post_comment')->middleware('auth');
 // Route::get('/p/{post:slug}/like' )->middleware('auth');
+=======
+
+Route::post('/p/{post:slug}/comment', [CommentController::class, 'store'])->name('post_comment')->middleware('auth');
+>>>>>>> 5365170645c1f86bb5fb86046685c546c0b97044
 
 Route::middleware('auth')->group(function () {
   Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -49,3 +62,7 @@ Route::middleware('auth')->group(function () {
   Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+<<<<<<< HEAD
+=======
+require __DIR__.'/auth.php';
+>>>>>>> 5365170645c1f86bb5fb86046685c546c0b97044

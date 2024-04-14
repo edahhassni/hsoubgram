@@ -20,6 +20,7 @@
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
+<<<<<<< HEAD
                 @guest
                     <div class="hidden md:flex md:items-center md:space-x-2">
                         <div class="space-x-2 text[1.6rem] me-5 leading-5">
@@ -28,6 +29,8 @@
                         </div>
                     </div>
                 @endguest
+=======
+>>>>>>> 5365170645c1f86bb5fb86046685c546c0b97044
                 @auth
                     <div class="flex items-center space-x-3">
                         <div class="spac-x-3 text-[1.6rem] mr-2 leading-5">
@@ -44,6 +47,7 @@
                                 ? '<i class="bx bxs-message-square-add"></i>'
                                 : '<i class="bx bx-message-square-add"></i>' !!}
                             </a>
+<<<<<<< HEAD
                             <a href="{{route('create_post')}}">
                                 {!! url()->current() == route('create_post')
                                 ? '<i class="bx bxs-inbox"></i>'
@@ -80,6 +84,35 @@
                         </x-slot>
                     </x-dropdown>
                 </div>
+=======
+                        </div>
+                    </div>
+                @endauth
+                <x-dropdown align="right" width="48">
+                    <x-slot name="trigger">
+                        <div>
+                            <img src="{{auth()->user()->image}}" class="w-6 h-6 rounded-full" alt="">
+                        </div>
+                    </x-slot>
+
+                    <x-slot name="content">
+                        <x-dropdown-link :href="route('profile.edit')">
+                            {{ __('Profile') }}
+                        </x-dropdown-link>
+
+                        <!-- Authentication -->
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+
+                            <x-dropdown-link :href="route('logout')"
+                                    onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                                {{ __('Log Out') }}
+                            </x-dropdown-link>
+                        </form>
+                    </x-slot>
+                </x-dropdown>
+>>>>>>> 5365170645c1f86bb5fb86046685c546c0b97044
             </div>
 
             <!-- Hamburger -->
@@ -104,6 +137,7 @@
 
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200 dark:border-gray-600">
+<<<<<<< HEAD
             @guest
                 <x-responsive-nav-link :href="route('login')">
                     {{ __('Login') }}
@@ -114,11 +148,16 @@
             @endguest
             @auth
 
+=======
+>>>>>>> 5365170645c1f86bb5fb86046685c546c0b97044
             <div class="px-4">
                 <div class="font-medium text-base text-gray-800 dark:text-gray-200">{{ Auth::user()->name }}</div>
                 <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
             </div>
+<<<<<<< HEAD
             @endauth
+=======
+>>>>>>> 5365170645c1f86bb5fb86046685c546c0b97044
 
             <div class="mt-3 space-y-1">
                 <x-responsive-nav-link :href="route('profile.edit')">

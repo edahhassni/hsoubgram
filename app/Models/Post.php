@@ -24,6 +24,7 @@ class Post extends Model
     }
 
 
+<<<<<<< HEAD
     public function likes()
     {
         return $this->belongsToMany(User::class,'likes');
@@ -33,5 +34,8 @@ class Post extends Model
     {
         return $this->likes()->where('user_id', $user->id)->exists();
     }
+=======
+
+>>>>>>> 5365170645c1f86bb5fb86046685c546c0b97044
 
 }

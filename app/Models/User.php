@@ -21,8 +21,11 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+<<<<<<< HEAD
         'bio',
         'private_account',
+=======
+>>>>>>> 5365170645c1f86bb5fb86046685c546c0b97044
         'username',
         'email',
         'image',
@@ -60,6 +63,7 @@ class User extends Authenticatable
 
     public function suggested_users()
     {
+<<<<<<< HEAD
         $following = auth()->user()->following()->wherePivot('confirmed', true)->get();
         return User::all()->diff($following)->except(auth()->id())->shuffle()->take(5);
     }
@@ -120,4 +124,9 @@ class User extends Authenticatable
     {
         return $this->following()->where('following_user_id',$user->id)->where('confirmed', true)->exists();
     }
+=======
+        return User::whereNot('id', auth()->id())->get()->shuffle()->take(5);
+    }
+
+>>>>>>> 5365170645c1f86bb5fb86046685c546c0b97044
 }

@@ -33,8 +33,11 @@
         </div>
 
         <div class="flex items-center justify-end mt-4">
+<<<<<<< HEAD
             <a href="{{ route('register') }}" class="me-20 btn text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
 
+=======
+>>>>>>> 5365170645c1f86bb5fb86046685c546c0b97044
             @if (Route::has('password.request'))
                 <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">
                     {{ __('Forgot your password?') }}
@@ -44,10 +47,13 @@
             <x-primary-button class="ml-3">
                 {{ __('Log in') }}
             </x-primary-button>
+<<<<<<< HEAD
             {{-- <x-primary-button class="ml-3">
                 {{ __('register') }}
             </x-primary-button> --}}
 
+=======
+>>>>>>> 5365170645c1f86bb5fb86046685c546c0b97044
         </div>
     </form>
 </x-guest-layout>

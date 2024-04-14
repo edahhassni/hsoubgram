@@ -34,6 +34,7 @@
               <div class="me-5">
                 <a href="/{{$suggested_user->username}}">
                 <img src="{{$suggested_user->image}}" class="rounded-full h-9 w-9 border border-gray-300" alt="">
+<<<<<<< HEAD
 
               </a>
               </div>
@@ -52,6 +53,14 @@
               @endif --}}
               <livewire:follow-button  :userId="$suggested_user->id" btnStyle="text-blue-500"/>
 
+=======
+                </a>
+              </div>
+              <div class="flex flex-col">
+                <a href="/{{$suggested_user->username}}">{{$suggested_user->username}}</a>
+                <div class="text-gray-500 text-sm">{{$suggested_user->name}}</div>
+              </div>
+>>>>>>> 5365170645c1f86bb5fb86046685c546c0b97044
             </li>
           @endforeach
         </ul>

@@ -22,7 +22,11 @@ class PostFactory extends Factory
             'description' => fake()->sentence(),
             'slug' => fake()->regexify('[A-Za-z0-9]{10}'),
             'user_id' => User::factory(),
+<<<<<<< HEAD
             'image' => 'storage/posts/' . fake()->randomElement($images),
+=======
+            'image' => 'posts/' . fake()->randomElement($images),
+>>>>>>> 5365170645c1f86bb5fb86046685c546c0b97044
         ];
     }
 }
